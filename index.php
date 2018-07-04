@@ -14,11 +14,12 @@ and open the template in the editor.
         // put your code here
         $myFile = "test.txt";
         $fh = fopen($myFile, 'r')or die("can't open file");
-        //$fl = flen($myFile);
+        
         $theData = fread($fh, filesize($myFile));
         fclose($fh);
         echo $theData;
-        $changestr = str_replace("freaking", "****", $theData);
+        $arr = ARRAY("damn" => "*", "freaking" => "**");
+        $changestr = str_replace("freaking", $arr["freaking"], $theData);
         echo "<br>";
         echo "$changestr";
 
